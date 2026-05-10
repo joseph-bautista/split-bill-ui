@@ -1,17 +1,270 @@
-# React + Vite
+# Split Bill UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend application for the Split Bill system.
 
-Currently, two official plugins are available:
+Built using:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* ReactJS
+* Vite
+* Axios
+* React Router DOM
 
-## React Compiler
+This application connects to the Split Bill API backend.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+# Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# split-bill-ui
+## Authentication
+
+* Login
+* Register
+* Logout
+* Protected routes
+
+## Bills
+
+* View bills
+* Create bills
+* View bill details
+
+## Items
+
+* Add items
+* Update items
+* Delete items
+* View total bill amount
+
+
+---
+
+# Tech Stack
+
+| Technology       | Purpose              |
+| ---------------- | -------------------- |
+| ReactJS          | Frontend framework   |
+| Vite             | Build tool           |
+| Axios            | API requests         |
+| React Router DOM | Routing              |
+| Context API      | Authentication state |
+
+---
+
+# Project Structure
+
+```txt
+split-bill-ui/
+ ├── src/
+ │    ├── api/
+ │    ├── components/
+ │    ├── context/
+ │    ├── pages/
+ │    ├── App.jsx
+ │    ├── main.jsx
+ │    └── index.css
+ ├── public/
+ ├── .env
+ ├── package.json
+ └── vite.config.js
+```
+
+---
+
+# Installation
+
+## 1. Clone Repository
+
+```bash
+git clone <repository_url>
+```
+
+```bash
+cd split-bill-ui
+```
+
+---
+
+# Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+# Environment Variables
+
+Create a `.env` file in the project root.
+
+## .env
+
+```env
+VITE_API_URL=http://localhost:3000/api
+```
+
+---
+
+# Start Development Server
+
+```bash
+npm run dev
+```
+
+Frontend runs on:
+
+```txt
+http://localhost:5173
+```
+
+---
+
+# Backend Requirement
+
+The backend API must already be running.
+
+Backend repository:
+
+```txt
+split-bill-api
+```
+
+Expected backend URL:
+
+```txt
+http://localhost:3000
+```
+
+---
+
+# Authentication Flow
+
+## Login
+
+Users authenticate using:
+
+```txt
+POST /api/auth/login
+```
+
+JWT tokens are stored in:
+
+```txt
+localStorage
+```
+
+Axios automatically attaches:
+
+```txt
+Authorization: Bearer <token>
+```
+
+for protected requests.
+
+---
+
+# Available Screens
+
+| Screen       | Description       |
+| ------------ | ----------------- |
+| Login        | User login        |
+| Register     | User registration |
+| Dashboard    | Main landing page |
+| Bills        | Bills listing     |
+| Bill Details | View bill items   |
+
+---
+
+# Routing
+
+Uses React Router DOM.
+
+## Routes
+
+| Route        | Description  |
+| ------------ | ------------ |
+| `/`          | Login        |
+| `/register`  | Register     |
+| `/dashboard` | Dashboard    |
+| `/bills`     | Bills page   |
+| `/bills/:id` | Bill details |
+
+---
+
+# API Integration
+
+Frontend communicates with backend using Axios.
+
+## Axios Instance
+
+Located at:
+
+```txt
+src/api/axios.js
+```
+
+Uses:
+
+```js
+import.meta.env.VITE_API_URL
+```
+
+for configurable environments.
+
+---
+
+# Running Tests
+
+## Run Tests
+
+```bash
+npm test
+```
+
+---
+
+# Recommended Seeded Login
+
+| Email                                       | Password |
+| ------------------------------------------- | -------- |
+| [joseph@gmail.com](mailto:joseph@gmail.com) | 123456   |
+
+---
+
+# Proper Code Structure
+
+## Pages
+
+Application screens.
+
+## Components
+
+Reusable UI components.
+
+## Context
+
+Authentication state management.
+
+## API
+
+Axios configuration and API abstraction.
+
+---
+
+# Future Improvements
+
+* Mobile responsive UI
+* Toast notifications
+* Dark mode
+* Skeleton loaders
+* React Query integration
+* Redux or Zustand
+* Real-time bill updates
+* Better UI/UX design
+* Form validation
+* Unit tests
+
+---
+
+# Author
+
+Joseph Bau
