@@ -194,7 +194,7 @@ export default function BillDetails() {
             onUpdated={fetchBill}
             />
         )
-}
+      }
 
     </div>
   );
